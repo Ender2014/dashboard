@@ -6,7 +6,24 @@
 }
 
 :root {
-  line-height: 1.5;
+    line-height: 1.5;
+    --color-main-bg: #5E4B8A;
+    --color-accent:  #D6C8E0;
+    --color-btn-links: #A77BCA;
+    --color-text-bg: #F3F3F3;
+
+    --fw-regular: 500;
+    --fw-bold: 600;
+    --fw-black: 700;
+
+    --font-size-small: 0.8rem;
+    --font-size-main: 1.4rem;
+    --font-size-large: 1.8rem;
+    --font-size-header: 2.2rem;
+  
+    --small-padding: 12px;
+    --medium-padding: 24px;
+    --large-padding: 32px
 }
 
 h1, h2, h3, h4, h5, figure, p, ol, ul {
@@ -45,9 +62,9 @@ a:hover, button:hover{
     cursor: pointer;
 }
 
-
 body{
     font-family: Roboto, sans-serif;
+    font-size: var(--font-size-main);
     height: 100vh;
     box-sizing: border-box;
 }
@@ -55,7 +72,7 @@ body{
 .container{
     height: 100%;
     display:grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: clamp(280px, 30%, 360px) 4fr;
     grid-template-rows: 1fr 4fr;
 }
 
@@ -63,21 +80,53 @@ body{
     grid-row:1/3;
     display: grid;
     grid-template-rows: repeat(2, 1fr) 8fr;
+    background-color: #5E4B8A;
+    color: #F3F3F3;
+    padding: 0px var(--medium-padding);
 }
 
-.sidebar .logo{
-    align-self: center;
-}
-
-
-
-.header{
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
+.logo, .sidebar-nav li {
+    display: flex;
+    gap: var(--medium-padding);
 }
 
 .logo > *{
     align-self: center;
+}
+
+.logo h1{
+    font-size: var(--font-size-header);
+    font-weight: var(--fw-black);
+}
+
+.logo img, .sidebar-nav li img {
+    filter: invert(1);
+    align-self: center;    
+}
+
+.logo img{
+    width: auto;
+    height: 4rem;
+}
+
+.sidebar-nav{
+    grid-row:2/4;
+    font-weight: var(--fw-bold);
+    font-size: var(--font-size-large);
+    padding: var(--medium-padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--medium-padding);
+}
+
+.sidebar-nav li img {
+    width: var(--font-size-large);
+    height: var(--font-size-large);
+}
+
+.header{
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
 }
 
 .header-top, .header-bottom, .profile, .header-left, .header-right ul{
