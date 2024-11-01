@@ -213,27 +213,30 @@ form, .header-left{
     font-weight: var(--fw-bold);
 }
 
+
+.projects, .lol{
+    grid-row: 1/3;
+}
+
+
 .projects, .Accouncements, .Trending{
     display: grid;
     grid-template-rows:  50px 1fr;
     margin: 20px;
 }
 
-.projects,.lol{
-    grid-row: 1/3;
-}
-
 .project-content{
     display: grid;
     gap: var(--large-padding);
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(320px, 1fr));
+    grid-auto-rows: minmax(320px, 1fr);
 }
 
 .project-content .cards{
     background-color: #F3F3F3;
     border-radius: var(--font-size-small);
     box-shadow: 0 4px 8px var(--color-main-bg);
-    height: 400px;
 }
 
 .lol{
@@ -245,5 +248,5 @@ form, .header-left{
     background-color: #F3F3F3;
     border-radius: var(--font-size-small);
     box-shadow: 0 4px 8px var(--color-main-bg);
-    width: max(200px, 100%)
+
 }
