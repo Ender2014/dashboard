@@ -8,7 +8,7 @@
 :root {
     line-height: 1.5;
     --color-main-bg: #5E4B8A;
-    --color-contrast: #9ECA7B;
+    --color-contrast: #CA7B9E;
     --color-accent:  #D6C8E0;
     --color-btn-links: #A77BCA;
     --color-text-bg: #F3F3F3;
@@ -86,8 +86,10 @@ textarea {
     font-size: 100%;
 }
 
-a:hover, button:hover, img{
+a:hover, button:hover, img, .cards{
     cursor: pointer;
+    transform: scale(1.05); 
+    
 }
 
 body{
@@ -115,11 +117,6 @@ body{
     color: #F3F3F3;
     padding: 0px var(--medium-padding);
 }
-
-.sidebar.shrink {
-    width: 0; /* Set width to 0 to hide it */
-    overflow: hidden; /* Prevents content overflow */
-  }
 
 .logo, .sidebar-nav li {
     display: flex;
@@ -151,6 +148,7 @@ body{
 }
 
 .sidebar-nav li img {
+    grid-column: 2/3;
     width: var(--font-size-large);
     height: var(--font-size-large);
 }
@@ -259,6 +257,7 @@ form, .header-left{
 .project-content .cards, .Accouncements .cards, .Trending .cards{
     display:flex;
     flex-direction: column;
+    margin-top: var(--small-padding);
     gap: var(--medium-padding);
     background-color: #F3F3F3;
     border-radius: var(--font-size-small);
@@ -286,5 +285,45 @@ form, .header-left{
     display: flex;
     gap: var(--medium-padding);
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 1200px) {
+    .sidebar, .lol {
+      display: none;
+    }
+
+    .header, .content{
+        grid-column: 1/3;
+    }
+
+    .projects{
+        grid-column: 1/3;
+    }
+}
+
+@media (max-width: 768px) {
+    .header{
+        padding-top: var(--medium-padding);
+    }
+    .header-bottom{
+        display: none;
+    }
+    .header-top{
+        grid-row: 1/3;
+        gap: var(--medium-padding);
+        align-self: center;
+    }
+    .profile:last-child > :last-child{
+        display: none;
+    }
+
+    .profile img{
+        min-width: 2rem;
+        min-height: 2rem;
+        flex-shrink: 0;
+    }
 }
 
