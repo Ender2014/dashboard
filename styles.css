@@ -72,7 +72,7 @@ body{
 .container{
     height: 100%;
     display:grid;
-    grid-template-columns: clamp(280px, 30%, 360px) 4fr;
+    grid-template-columns: clamp(320px, 30%, 360px) 4fr;
     grid-template-rows: 1fr 4fr;
 }
 
@@ -85,9 +85,14 @@ body{
     padding: 0px var(--medium-padding);
 }
 
+.sidebar.shrink {
+    width: 0; /* Set width to 0 to hide it */
+    overflow: hidden; /* Prevents content overflow */
+  }
+
 .logo, .sidebar-nav li {
     display: flex;
-    gap: var(--medium-padding);
+    gap: var(--small-padding);
 }
 
 .logo > *{
