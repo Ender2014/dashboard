@@ -8,6 +8,7 @@
 :root {
     line-height: 1.5;
     --color-main-bg: #5E4B8A;
+    --color-contrast: #9ECA7B;
     --color-accent:  #D6C8E0;
     --color-btn-links: #A77BCA;
     --color-text-bg: #F3F3F3;
@@ -127,11 +128,6 @@ body{
 
 .logo > *{
     align-self: center;
-}
-
-.logo h1{
-    font-size: var(--font-size-header);
-    font-weight: var(--fw-black);
 }
 
 .logo img, .sidebar-nav li img {
@@ -269,6 +265,9 @@ form, .header-left{
     box-shadow: 0 4px 8px var(--color-main-bg);
     padding: var(--medium-padding);
     position:relative;
+}
+.project-content .cards{
+    border-left: 12px solid var(--color-contrast);
 }
 
 .card-icons {
